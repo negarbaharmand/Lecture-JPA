@@ -59,11 +59,14 @@ public class StudentDaoImpl implements StudentDao {
     }
 
     @Override
+    @Transactional
     public void update(Student student) {
         entityManager.merge(student);
     }
 
     @Override
+    // We use @Transactional when modifying data
+    @Transactional
     public void remove(String id) {
         Student foundStudent = entityManager.find(Student.class, id);
         if (foundStudent == null) {
