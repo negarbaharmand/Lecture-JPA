@@ -16,7 +16,7 @@ public class MyCommandLineRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Student student = new Student("Test", "Testsson", "test@test.se");
-        studentDao.persist(student);
+        // Student student = new Student("Test", "Testsson", "test@test.se");
+        // studentDao.persist(student);
     }
 }

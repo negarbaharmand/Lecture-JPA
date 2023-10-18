@@ -9,6 +9,7 @@ import java.time.LocalDateTime;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
+@EqualsAndHashCode
 @ToString
 
 @Entity
@@ -34,6 +35,11 @@ public class Student {
 
     private boolean status;
     private LocalDateTime createDate;
+
+    @Setter
+    @OneToOne
+    @JoinColumn(name = "address_id")
+    private Address address;
 
 
     public Student(String firstName, String lastName, String email) {
