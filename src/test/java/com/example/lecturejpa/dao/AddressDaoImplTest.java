@@ -23,6 +23,9 @@ public class AddressDaoImplTest {
     @Autowired
     AddressDaoImpl addressDao;
 
+    private Address address1;
+    private Address address2;
+
     @BeforeEach
     void setUp() {
 
@@ -42,8 +45,7 @@ public class AddressDaoImplTest {
 
     @Test
     void testFindById() {
-        Long id = 1L;
-        Optional<Address> optionalAddress = addressDao.findById(id);
+        Optional<Address> optionalAddress = addressDao.findById(address1.getId());
         assertTrue(optionalAddress.isPresent());
         Address foundAddress = optionalAddress.get();
         assertEquals("123 Test1 St", foundAddress.getStreet());
