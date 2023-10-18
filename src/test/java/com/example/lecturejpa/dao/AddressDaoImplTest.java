@@ -21,13 +21,13 @@ import static org.junit.jupiter.api.Assertions.*;
 public class AddressDaoImplTest {
 
     @Autowired
-    private AddressDao addressDao;
+    AddressDaoImpl addressDao;
 
     @BeforeEach
     void setUp() {
 
-        Address address1 = new Address("123 Main St", "City 1", "12345");
-        Address address2 = new Address("456 Elm St", "City 2", "67890");
+        Address address1 = new Address("123 Test1 St", "City 1", "12345");
+        Address address2 = new Address("456 Test2 St", "City 2", "67890");
 
         addressDao.persist(address1);
         addressDao.persist(address2);
@@ -46,7 +46,7 @@ public class AddressDaoImplTest {
         Optional<Address> optionalAddress = addressDao.findById(id);
         assertTrue(optionalAddress.isPresent());
         Address foundAddress = optionalAddress.get();
-        assertEquals("123 Main St", foundAddress.getStreet());
+        assertEquals("123 Test1 St", foundAddress.getStreet());
         assertEquals("City 1", foundAddress.getCity());
         assertEquals("12345", foundAddress.getZipCode());
     }

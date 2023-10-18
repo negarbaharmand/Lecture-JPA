@@ -34,7 +34,7 @@ public class StudentDaoImplTest {
     @Test
     public void testFindStudentById() {
         // Arrange
-        Student student = new Student("Jane", "Smith", "jane@test.se");
+        Student student = new Student("Negar", "Baharmand", "negar@test.se");
         Student insertedStudent = studentDao.persist(student);
 
         // Act
@@ -43,9 +43,9 @@ public class StudentDaoImplTest {
         // Assert
         assertTrue(foundStudent.isPresent());
         assertEquals(insertedStudent.getId(), foundStudent.get().getId());
-        assertEquals("Jane", foundStudent.get().getFirstName());
-        assertEquals("Smith", foundStudent.get().getLastName());
-        assertEquals("jane@test.se", foundStudent.get().getEmail());
+        assertEquals("Negar", foundStudent.get().getFirstName());
+        assertEquals("Baharmand", foundStudent.get().getLastName());
+        assertEquals("negar@test.se", foundStudent.get().getEmail());
     }
 
 }
