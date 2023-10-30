@@ -1,6 +1,5 @@
 package com.example.lecturejpa;
 
-import com.example.lecturejpa.dao.StudentDao;
 import com.example.lecturejpa.entity.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -11,8 +10,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class MyCommandLineRunner implements CommandLineRunner {
 
-    @Autowired
-    StudentDao studentDao;
 
     @Override
     public void run(String... args) throws Exception {

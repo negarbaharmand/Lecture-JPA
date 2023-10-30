@@ -22,6 +22,9 @@ public class Address {
     private String city;
     @Column(nullable = false, length = 6)
     private String zipCode;
+    //bidirectional relation:
+    @OneToOne(mappedBy = "address")
+    private Student student;
 
     public Address(String street, String city, String zipCode) {
         this.street = street;
