@@ -1,5 +1,6 @@
 package com.example.lecturejpa.repository;
 
+import com.example.lecturejpa.entity.Course;
 import com.example.lecturejpa.entity.Student;
 import jakarta.persistence.Entity;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -30,5 +31,9 @@ public interface StudentRepository extends JpaRepository<Student, String> {
     @Modifying
     @Query("update Student s set s.status = true where s.id = :id")
     void updateStudentStatusTrue(@Param("studentId") String studentId);
+
+    //Find students who attend course with id courseId:
+    List<Student> findByCourses_Id(Long courseId);
+    List<Student> findByCourses_CourseName(String name);
 
 }
